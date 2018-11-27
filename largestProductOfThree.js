@@ -4,13 +4,13 @@
 
 function largestProductOfThree (array) {
 
-  let largest = [-999, -999, -999];
+  let largest = [-Infinity, -Infinity, -Infinity];
 
-  array.sort();
+  array.sort(function(a, b){return a - b});
 
   for(let i=array.length; i>=0; i--) {
     saveLargest(array[i]);
-    console.log(array[i], largest)
+//     console.log(array[i], largest)
   }
 
   return largest[0] * largest[1] * largest[2];
